@@ -1,149 +1,137 @@
-let age = 25;
-let year = 2019;
-// logs things to console
-console.log(age,year);
-/*comment */
-age = 30;
-console.log(age);
- 
-const points = 100;
-console.log(points);
- 
-var score = 75;
-console.log(score);
- 
-//Strings
-console.log("Hello world");
-let email = "bsd78@diu.edu"
-console.log(email);
- 
-//string concatenation
- 
-let firstName = 'ttpp';
-let secondName = 'jjikf';
- 
-let fullName = firstName + " " + secondName;
-console.log(fullName)
- 
-//getting characters
-console.log(fullName[2]);
- 
-//string length
-console.log(fullName.length);
- 
-//stirng methods
-console.log(fullName.toUpperCase());
-let result = fullName.toUpperCase();
-console.log(result , fullName);
- 
-let index = email.indexOf("@")
-console.log(index);
- 
-//common string methods
- 
- email = 'diba@gmkf';
- 
- let res = email.replace('k','w');
- console.log(res);
- 
-let radius = 10;
-const pi = 3.14;
-console.log(radius, pi);
- 
-// math operator + , -,/,**,%
-console.log(10/20);
-let re = radius % 3;
-let r = pi * radius **2;
-console.log(re);
-console.log(r);
- 
-//order of operators - B I D M A S
-let g = 5*(10-3)**2;
-console.log(g);
-let likes=10;
- 
-//likes = likes +1;
-//likes++;
-// likes--;
-//likes +=10;
-//likes -=5;
-//likes /=2;
-console.log(likes);
-//NaN - not a number
- 
-//templete strings
-const title = 'best reads of 2019';
-const author = 'Mario';
-const like = 30;
- 
-//concatenation way
-let b = 'the blocked called'+title+'by'+author+'has'+like+'likes';
-console.log(b);
- 
-//template string way
-let rrr = The blog called ${title} by ${author} has ${like}likes;
-console.log(rrr);
- 
-//creating html templetes
-let html = 
-<h2>${title}</h2>
-<p>By ${author}</p>
-<span>This blog us ${likes}</span>
-;
-console.log(html);
- 
-//Array
-let ninjas = ['ryun','ry','hh'];
-console.log(ninjas);
-console.log(ninjas[2]);
-ninjas[1]= 'pepsi'
-console.log(ninjas);
-let ages=[10,25,1000,369]
-console.log(ages);
-let haha = [10,'ry']
-console.log(haha);
-console.log(ninjas.length);
- 
- 
-//Array method
-let met = ninjas.join('.');
-console.log(met);
-let ind = ninjas.indexOf('hh');
-console.log(ind);
-let con = ninjas.concat(['joey']);
-console.log(con);
-let pt = ninjas.push('ken');
-console.log(ninjas);
-let pop = ninjas.pop();
-console.log(ninjas);
- 
-//undefinied
-let gogo ;
-console.log(gogo , gogo+3 , the age is ${gogo});
- 
-//Null
-let gogoo = null;
-console.log(gogoo , gogoo+3 , the age is ${gogoo});
- 
-//booleans
-console.log(true,false,'true','false');
- 
-//method can return
-let em = 'dfhfh@.co.uk';
-let dfj = ['fy','yu','uiy'];
-let gg = dfj.includes("hu");
-let fdd = em.includes('@');
-console.log(fdd);
-console.log(gg);
- 
-//comparisn operators
-let a = 20;
-console.log(a ==25);
-console.log(a==30);
-console.log(a!=25);
-console.log(a>25);
-console.log(a<25);
-console.log(a>=25);
-console.log(a<=25);
-co.uk
+//function declaration
+function greet() {
+    console.log('helo there')
+}
 
+greet();
+
+// function expressions
+const speak = function() {
+    console.log('good day!')
+};
+speak();
+
+//arguments and parameters
+
+const speak = function(name) {
+    console.log('good day ${name}')
+};
+speak('mario')
+
+// passing different parameter/arguments
+const speak = function(name, time) {
+    console.log('good ${time} ${name}')
+};
+speak('mario', 'morning');
+
+// give this parameters some different values
+const speak = function(name = 'luigi', time = 'night') {
+    console.log('good ${time} ${name}')
+};
+speak();
+
+//returning values
+const calcArea = function(radius) {
+    return 3.14 * radius ** 2;
+};
+const area = calcArea(5);
+console.log(area);
+
+//regular function
+const calcArea = function(radius) {
+    return 3.14 * radius ** 2;
+};
+
+//arrow function
+const calcarea = radius => 3.14 * radius ** 2;
+//two parameters we have to use parenthesis
+
+const area = calcArea(5);
+console.log('area is :', area);
+
+//practise arrow function
+const greet = function() {
+    return 'hello,world';
+};
+const greet = () => 'hello,world';
+const result = greet();
+console.log(result);
+
+// practise arrow function 
+const bill = function(products, taxs) {
+    let total = 0;
+    for (let i = 0; i < products.length; i++) {
+        total += products[i] + products[i] * taxs;
+    }
+    return total;
+}
+const bill = (products, taxs) => {
+    let total = 0;
+    for (let i = 0; i < products.length; i++) {
+        total += products[i] + products[i] * taxs;
+    }
+    return total;
+};
+
+console.log(bill([10, 15, 30], 0.2));
+
+//method and function 
+const name = 'shaun'
+
+//function 
+const greet = () => 'hello';
+let resultOne = greet();
+console.log(resultOne);
+
+
+
+// method
+let resultTwo = name.toUpperCase();
+console.log(resultTwo);
+
+// callbacks & foreach
+const myFunc = (callbackFunc) => {
+    //do something
+    let value = 50;
+    callbackFunc(value);
+};
+myFunc(value => {
+    //do something
+    console.log(value);
+});
+// foreach
+let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+people.forEach(person => {
+    console.log(person)
+});
+//using index in second argument in arrow function
+
+let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+people.forEach(person, index) => {
+console.log(index, person)
+});
+// callbacks and foreach together 
+let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+const logPerson = (person, index) => {
+
+    console.log('${index} - hello $ {person}');
+};
+people.forEach(logPerson);
+
+
+// get a reference to the 'ul'
+const ul = document.querySelector('.people');
+
+const people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+let html = ' ';
+people.forEach(person => {
+    // create html template
+    html += '<li style="color: purple">${person}</li>';
+});
+
+console.log(html);
+ul.innerHTML = html
