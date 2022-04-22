@@ -1,133 +1,103 @@
-// for loop 
-let u = 'shaun';
-console.log(u == 'shaun');
-console.log(u== 'Shaun');
-console.log(u > 'crystal');
- 
- 
-const names = ['shaun','mario','luigi'];
-for(let i=0;i<names.length;i++){
-    //console.log(names[i]);
-    let html = <div>${names[i]}</div>;
-    console.log(html);
-}
- 
- 
-//while loop
- 
-const names=['shaun','mario','luigi'];
- 
-let i=0;
-while(i<5){
-   console.log('in loop',i);
-      i++;
-}
-let i=0;
-while(i<names.length){
-    console.log(names[i]);
-    i++;
-}
- 
-//do while loop
- 
-let i=4;
-do{
-    console.log('value of i is ',i);
-    i++;
-}while(i<5);
- 
-//if statement
- 
-const age=25;
-if(age>20){
-    console.log('you are over 20 yerars of age');
-}
-const ninjas=['laugi','imran'.'diba','sahadat'];
-if (ninjas.length>3){
-    console.log('that\'s a lot of ninjas');
-}
-const password='password12345';
-if(password.length>=12){
-    console.log('that password is mighty strong');
-}else if(password.length>=8){
-    console.log('that password is long enough');
-}else{
-    console.log('password is not long enough')
-}
- 
- 
- 
-//logical operators -OR || AND &&
-const password='p@ssword12345';
-if(password.length>=12 && password.includes('@')){
-    console.log('that password is mighty strong');
-}else if(password.length>=8 || password.includes('@') && password.length>=5){
-    console.log('that password is strong enough');
-}else{
-    console.log('password is not strong enough')
-}
- 
- 
-//logical NOT(!)
-let user = false;
-if(!user){
-    console.log('you must be logged in to continue');
-}
-console.log(!true);
-console.log(!false);
- 
- 
-//break and continue
-const scores = [50,25,0,30,100,20,10];
-for(let i=0;i<scores.length;i++){
- 
-    if(scores[i]===0){
-        continue;
+// const blogs=[
+//     {title: 'why mac & cheese rules', likes:30},
+//     {title: '10 things to make with marmite',likes:50}
+// ],
+
+// console.log(blogs);
+
+
+
+let user={
+    name: 'crysta',
+    age: 30,
+    email: 'crystal@gmail.com',
+    location: 'berlin',
+    //blogs: ['why mac & cheese rules','10 things to make with marmite'],
+    blogs=[
+        {title: 'why mac & cheese rules', likes:30},
+        {title: '10 things to make with marmite',likes:50}
+    ],
+
+    login: function(){
+        console.log('the user logged in');
+    },
+    logout: function(){
+        console.log('the user loged out');
+    },
+    
+    logBlogs: function(){
+        //console.log(this.blogs);
+        console.log('this user has written the following blogs:');
+        this.blogs.forEach(blog => {
+            console.log(blog.title,blog.likes);
+        })
     }
- 
-    console.log('your score: ',scores[i]);
-    if(scores[i]===100){
-        console.log('congrates!you got the top score.');
-        break;
-    }
-}
- 
- 
-//switch statements
- 
-const grade='D';
-switch(grade){
-    case 'A':
-        console.log('You got an A!');
-        break;
-    case 'B':
-        console.log('You got a B!');
-                break;
-    case 'C':
-        console.log('You got a C!');
-        break;
-    case 'D':
-        console.log('You got a D!');
-        break;
-    case 'E':
-        console.log('You got an E!');
-        break;
-    default:
-        console.log('Not a valid grade.');
-}
- 
- 
- 
-//variable &block scope
-let age=30;
-let name='Sam';
-if(true){
-    age=40;
-    let name='Shaun';
-    console.log('inside 1st code block: ',age,name);
-    if(true){
-        let age=50;
-        console.log('inside the 2nd block: ',age);
-    }
-}
-console.log('outside 1st code block: ',age,name);
+
+};
+
+// console.log(user);
+// console.log(user.name);
+
+// //user.age=35
+// console.log(user.age);
+
+// const key = 'location';
+
+// console.group(user[key]); user['location']
+// user['name']='chun-li';
+// console.log(user['name']);
+
+// console.log(typeof user);
+
+//--------------------------------------------------------
+
+// user.login();
+// user.logout();
+
+// const name = 'mario';
+// name.toUpperCase();
+
+//--------------------------------------------------------
+
+user.logBlogs();
+console.log(this);
+
+//math object
+
+console.log(Math);
+console.log(Math.Pi);
+console.log(Math.E);
+
+const area= 7.7;
+
+console.log(Math.round(area));
+console.log(Math.floor(area));
+console.log(Math.cell(area));
+console.log(Math.trunc(area));
+
+
+//random numbers
+
+const random =Math.random();
+
+console.log(random);
+console.log(Math.round(random*100));
+
+//primitive values
+
+let scoreOne=50;
+let scoreTwo = scoreOne;
+
+console.log('scoreOne:${scoreOne}','scoreTwo: $(scoreTwo}');
+
+scoreOne = 100;
+console.log('scoreOne: ${scoreOne}','scoreTwo: ${scoreTwo}');
+
+//refernce values
+
+const userOne ={ name:'ryu',age:30};
+const userTwo= userOne;
+console.log(userOne, usertwo);
+
+userOne.age =40;
+console.log(userOne, userTwo);
