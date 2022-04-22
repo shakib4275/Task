@@ -62,6 +62,7 @@ let user={
 user.logBlogs();
 console.log(this);
 
+
 //math object
 
 console.log(Math);
